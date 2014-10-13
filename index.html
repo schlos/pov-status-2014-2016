@@ -80,10 +80,9 @@
   </div>
 
 <p class="data-source">
-  Izvor: 
+  ({{dataformat}}{{^dataformat}}Nepoznato{{/dataformat}}:)
   {{#dataurl}}
   {{dataurl}}
-  ({{dataformat}}{{^dataformat}}Unknown format{{/dataformat}})
   {{/dataurl}}
   {{^dataurl}}
   <strong>Potrebno je pronaći!</strong>
@@ -96,14 +95,14 @@
 
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
-    Izvor podataka
+    Kategorija
   </dt>
   <dd>
-    {{#dataurl}}<a href="{{dataurl}}">{{dataurl}}</a>{{/dataurl}}
+    {{#dataurl}}{{dataurl}}{{/dataurl}}
     {{^dataurl}}&nbsp;{{/dataurl}}
   </dd>
   <dt>
-    Detalji
+    Pokazatelji
   </dt>
   <dd>
   {{place}}{{#period}} &ndash; {{period}}{{/period}}.
