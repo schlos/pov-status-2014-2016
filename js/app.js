@@ -48,7 +48,7 @@ function parseOwners(owners) {
 }
 
 // replace http:// to a string ...
-function markup(str) {
-  str = str.replace(/(https?:\/\/[^ ]+)/g, '<a href="$1">$1</a>');
-  return str;
-}
+//function markup(str) {
+//  str = str.replace(/(https?:\/\/[^ ]+)/g, '<a href="$1">$1</a>');
+//  return str;
+//}
