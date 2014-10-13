@@ -80,7 +80,7 @@
   </div>
 
 <p class="data-source">
-  ({{dataformat}}{{^dataformat}}Nepoznato{{/dataformat}}:)
+  {{dataformat}}{{^dataformat}}Nepoznato{{/dataformat}}:
   {{#dataurl}}
   {{dataurl}}
   {{/dataurl}}
@@ -95,7 +95,7 @@
 
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
-    Kategorija
+    {{dataformat}}{{^dataformat}}Nepoznato{{/dataformat}}
   </dt>
   <dd>
     {{#dataurl}}{{dataurl}}{{/dataurl}}
@@ -109,7 +109,7 @@
   {{{description}}}
   </dd>
   <dt>
-    Zadaci
+    Sredstva
   </dt>
   <dd>
     {{workneeded}}
