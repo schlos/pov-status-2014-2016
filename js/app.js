@@ -17,7 +17,7 @@ jQuery(function($) {
       var out = Mustache.render(tmpl, results);
       $el.html(out);
     });
-  $('.source-url').attr();
+  $('.source-url').attr('href', url);
   $('.js-more-info').live('click', function(e) {
     e.preventDefault();
     $(e.target) .closest('.record').find('.more-info').toggle();
