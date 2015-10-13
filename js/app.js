@@ -21,6 +21,9 @@ jQuery(function($) {
   $('.js-more-info').live('click', function(e) {
     e.preventDefault();
     $(e.target) .closest('.record').find('.more-info').toggle();
+  $('.js-more-info-report').live('click', function(e) {
+    e.preventDefault();
+    $(e.target) .closest('.record').find('.more-info-report').toggle();
   });
 });
 
