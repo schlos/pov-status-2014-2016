@@ -73,12 +73,13 @@
   </h3>
 
   <div class="owners">
-    {{#owners}}Nositelj {{name}} ({{responsible1name}}) {{/owners}}
+    {{#owners}}Nositelj {{name}} {{#responsible1name}}({{responsible1name}}){{/responsible1name}} 
+    {{^responsible1name}}&nbsp;{{/responsible1name}} {{/owners}}
 
     {{^owners}}
     <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Nema nositelja &ndash; preuzmi ti &raquo;</a>
     {{/owners}}
-    {{#coowners}}Sunositelj {{coowners}}{{/coowners}}
+    {{#coowners}}<br>Sunositelj {{coowners}}{{/coowners}}
 
     {{^coowners}}
     &nbsp; <!-- Nema nositelja -->
