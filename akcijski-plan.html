@@ -73,8 +73,8 @@
   </h3>
 
   <div class="owners">
-    {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}}{{#responsible2name}} <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}){{/responsible2name}} 
-    {{^responsible2name}}{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}){{/responsible3name}} 
+    {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}}{{#responsible2name}} <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}{{/responsible2name}} 
+    {{^responsible2name}}{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}{{/responsible3name}} 
     {{^responsible3name}}{{/responsible3name}}){{/responsible1name}} 
     {{^responsible1name}}{{/responsible1name}}{{/owners}}
 
@@ -97,6 +97,7 @@
   <strong>Potrebno je pronaći!</strong>
   {{/dataurl}}
   {{#typeofdata}}&ndash; <a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više info</a>{{typeofdata}}{{/typeofdata}}
+  {{^typeofdata}}&nbsp;{{/typeofdata}}
 </p>
 <div class="progress">
   <div class="bar bar-{{status}}" style="width: {{progress}}%;" title="progress so far"></div>
@@ -135,33 +136,39 @@
     {{{goals}}}
   </dd>
 </dl>
-  <div class="tabbable tabs-left more-info" style="display: none;">
-  <p><h4>Izvješće za prvu godinu provedbe akcijskog plana:</h4></p>
-    <ul class="nav nav-tabs">
-      <li class=""><a href="#{{id}}_A" data-toggle="tab">Pokazatelji</a></li>
-      <li class=""><a href="#{{id}}_AB" data-toggle="tab">Relevantnost</a></li>
-      <li class=""><a href="#{{id}}_AC" data-toggle="tab">Očekivani rezultati</a></li>
-      <li class=""><a href="#{{id}}_AD" data-toggle="tab">Opis rezultata</a></li>
-      <li class=""><a href="#{{id}}_AE" data-toggle="tab">Sljedeći koraci</a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane" id="{{id}}_AA">
-        <p>{{description}}</p>
-      </div>
-      <div class="tab-pane" id="{{id}}_AB">
-        <p>{{relevancy}}</p>
-      </div>
-      <div class="tab-pane" id="{{id}}_AC">
-        <p>{{expectedresults}}</p>
-      </div>
-      <div class="tab-pane" id="{{id}}_AD">
-        <p>{{results}}</p>
-      </div>
-      <div class="tab-pane" id="{{id}}_AE">
-        <p>{{nextsteps}}</p>
-      </div>
-    </div>
-  </div>
+<a href="#" class="js-more-info-report" title="Click to show (hide) report"><i class="icon-info-sign"></i> Izvješće za prvu godinu provedbe akcijskog plana</a>
+<dl class="dl-horizontal more-info-report" style="display: none;">
+  <dt>
+    Pokazatelji
+  </dt>
+  <dd>
+    {{{description}}}
+  </dd>
+  <dt>
+    Relevantnost
+  </dt>
+  <dd>
+    {{{relevancy}}}
+  </dd>
+  <dt>
+    Očekivani rezultati
+  </dt>
+  <dd>
+    {{{expectedresults}}}
+  </dd>
+  <dt>
+    Opis rezultata
+  </dt>
+  <dd>
+    {{{results}}}
+  </dd>
+  <dt>
+    Sljedeći koraci
+  </dt>
+  <dd>
+    {{{nextsteps}}}
+  </dd>
+</dl>
 </div>
 {{/records}}
 </script>
