@@ -74,9 +74,9 @@
 
   <div class="owners">
     {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}}{{#responsible2name}} <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}){{/responsible2name}} 
-    {{^responsible2name}}&nbsp;{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}){{/responsible3name}} 
-    {{^responsible3name}}&nbsp;{{/responsible3name}}){{/responsible1name}} 
-    {{^responsible1name}}&nbsp;{{/responsible1name}}{{/owners}}
+    {{^responsible2name}}{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}){{/responsible3name}} 
+    {{^responsible3name}}{{/responsible3name}}){{/responsible1name}} 
+    {{^responsible1name}}{{/responsible1name}}{{/owners}}
 
     {{^owners}}
     <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Nema nositelja &ndash; preuzmi ti &raquo;</a>
@@ -136,7 +136,7 @@
   </dd>
 </dl>
   <div class="tabbable tabs-left more-info" style="display: none;">
-  <p><strong>Izvješće za prvu godinu provedbe akcijskog plana:</strong></p>
+  <p><h4>Izvješće za prvu godinu provedbe akcijskog plana:</h4></p>
     <ul class="nav nav-tabs">
       <li class=""><a href="#lA" data-toggle="tab">Pokazatelji</a></li>
       <li class=""><a href="#lB" data-toggle="tab">Relevantnost</a></li>
