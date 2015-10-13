@@ -71,12 +71,13 @@
   <h3>
     {{title}}
   </h3>
+  <span class="label label-{{statuslabel}}">{{statusopis}}</span>
 
   <div class="owners">
-    {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}} {{#responsible2name}}- <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}){{/responsible2name}} 
-    {{^responsible2name}}&nbsp;{{/responsible2name}} x{{#responsible3name}}- <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}){{/responsible3name}} 
+    {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}}{{#responsible2name}} <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}){{/responsible2name}} 
+    {{^responsible2name}}&nbsp;{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}){{/responsible3name}} 
     {{^responsible3name}}&nbsp;{{/responsible3name}}){{/responsible1name}} 
-    {{^responsible1name}}&nbsp;{{/responsible1name}} {{/owners}}
+    {{^responsible1name}}&nbsp;{{/responsible1name}}{{/owners}}
 
     {{^owners}}
     <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Nema nositelja &ndash; preuzmi ti &raquo;</a>
@@ -111,11 +112,11 @@
     {{^dataurl}}&nbsp;{{/dataurl}}
   </dd>
   <dt>
-    Pokazatelji
+    Rok
   </dt>
   <dd>
-  {{place}}{{#period}} &ndash; {{period}}{{/period}}.
-  {{{description}}}
+    {{#period}}{{period}}{{/period}}
+    Pokazatelji {{{description}}}
   </dd>
   <dt>
     Sredstva
@@ -124,18 +125,40 @@
     {{workneeded}}
   </dd>
   <dt>
-    Status
+    Samoocjena provedenosti
   </dt>
   <dd>
-    <span class="label label-{{statuslabel}}">{{statusopis}}</span>
+    {{#currentprogress}}Do srpnja 2015. &ndash; {{currentprogress}}{{/currentprogress}}
   </dd>
   <dt>
-    Bilješke
+    Glavni cilj
   </dt>
   <dd>
-    {{{notes}}}
+    {{{goals}}}
   </dd>
 </dl>
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class=""><a href="#lA" data-toggle="tab">Pokazatelji</a></li>
+    <li class=""><a href="#lB" data-toggle="tab">Relevantnost</a></li>
+    <li class=""><a href="#lC" data-toggle="tab">Očekivani rezultati</a></li>
+    <li class=""><a href="#lD" data-toggle="tab">Sljedeći koraci</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane" id="lA">
+      <p>Howdy, Im in Section B.</p>
+    </div>
+    <div class="tab-pane" id="lB">
+      <p>Howdy, Im in Section B.</p>
+    </div>
+    <div class="tab-pane" id="lC">
+      <p>Howdy, Im in Section B.</p>
+    </div>
+    <div class="tab-pane" id="lD">
+      <p>Howdy, Im in Section B.</p>
+    </div>
+  </div>
+</div>
 </div>
 {{/records}}
 </script>
