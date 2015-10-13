@@ -96,7 +96,7 @@
   {{^dataurl}}
   <strong>Potrebno je pronaći!</strong>
   {{/dataurl}}
-  &ndash; <a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više info</a>
+  {{#typeofdata}}&ndash; <a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više info</a>{{typeofdata}}{{/typeofdata}}
 </p>
 <div class="progress">
   <div class="bar bar-{{status}}" style="width: {{progress}}%;" title="progress so far"></div>
@@ -138,26 +138,26 @@
   <div class="tabbable tabs-left more-info" style="display: none;">
   <p><h4>Izvješće za prvu godinu provedbe akcijskog plana:</h4></p>
     <ul class="nav nav-tabs">
-      <li class=""><a href="#lA" data-toggle="tab">Pokazatelji</a></li>
-      <li class=""><a href="#lB" data-toggle="tab">Relevantnost</a></li>
-      <li class=""><a href="#lC" data-toggle="tab">Očekivani rezultati</a></li>
-      <li class=""><a href="#lD" data-toggle="tab">Opis rezultata</a></li>
-      <li class=""><a href="#lE" data-toggle="tab">Sljedeći koraci</a></li>
+      <li class=""><a href="#{{id}}_A" data-toggle="tab">Pokazatelji</a></li>
+      <li class=""><a href="#{{id}}_AB" data-toggle="tab">Relevantnost</a></li>
+      <li class=""><a href="#{{id}}_AC" data-toggle="tab">Očekivani rezultati</a></li>
+      <li class=""><a href="#{{id}}_AD" data-toggle="tab">Opis rezultata</a></li>
+      <li class=""><a href="#{{id}}_AE" data-toggle="tab">Sljedeći koraci</a></li>
     </ul>
     <div class="tab-content">
-      <div class="tab-pane" id="lA">
+      <div class="tab-pane" id="{{id}}_AA">
         <p>{{description}}</p>
       </div>
-      <div class="tab-pane" id="lB">
+      <div class="tab-pane" id="{{id}}_AB">
         <p>{{relevancy}}</p>
       </div>
-      <div class="tab-pane" id="lC">
+      <div class="tab-pane" id="{{id}}_AC">
         <p>{{expectedresults}}</p>
       </div>
-      <div class="tab-pane" id="lD">
+      <div class="tab-pane" id="{{id}}_AD">
         <p>{{results}}</p>
       </div>
-      <div class="tab-pane" id="lE">
+      <div class="tab-pane" id="{{id}}_AE">
         <p>{{nextsteps}}</p>
       </div>
     </div>
