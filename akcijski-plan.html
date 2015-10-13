@@ -73,7 +73,9 @@
   </h3>
 
   <div class="owners">
-    {{#owners}}Nositelj {{name}} {{#responsible1name}}({{responsible1name}}){{/responsible1name}} 
+    {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}} {{#responsible2name}}- <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}){{/responsible2name}} 
+    {{^responsible2name}}&nbsp;{{/responsible2name}} x{{#responsible3name}}- <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}){{/responsible3name}} 
+    {{^responsible3name}}&nbsp;{{/responsible3name}}){{/responsible1name}} 
     {{^responsible1name}}&nbsp;{{/responsible1name}} {{/owners}}
 
     {{^owners}}
