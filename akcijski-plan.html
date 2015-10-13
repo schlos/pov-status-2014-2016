@@ -71,7 +71,6 @@
   <h3>
     {{title}}
   </h3>
-  <span class="label label-{{statuslabel}}">{{statusopis}}</span>
 
   <div class="owners">
     {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}}{{#responsible2name}} <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}){{/responsible2name}} 
@@ -115,8 +114,7 @@
     Rok
   </dt>
   <dd>
-    {{#period}}{{period}}{{/period}}
-    Pokazatelji {{{description}}}
+    {{#period}}{{period}}{{/period}} <span class="label label-{{statuslabel}}">{{statusopis}}</span>
   </dd>
   <dt>
     Sredstva
@@ -125,7 +123,7 @@
     {{workneeded}}
   </dd>
   <dt>
-    Samoocjena provedenosti
+    Samoocjena
   </dt>
   <dd>
     {{#currentprogress}}Do srpnja 2015. &ndash; {{currentprogress}}{{/currentprogress}}
@@ -138,24 +136,29 @@
   </dd>
 </dl>
   <div class="tabbable tabs-left more-info" style="display: none;">
+  <p><strong>Izvješće za prvu godinu provedbe akcijskog plana:</strong></p>
     <ul class="nav nav-tabs">
       <li class=""><a href="#lA" data-toggle="tab">Pokazatelji</a></li>
       <li class=""><a href="#lB" data-toggle="tab">Relevantnost</a></li>
       <li class=""><a href="#lC" data-toggle="tab">Očekivani rezultati</a></li>
-      <li class=""><a href="#lD" data-toggle="tab">Sljedeći koraci</a></li>
+      <li class=""><a href="#lD" data-toggle="tab">Opis rezultata</a></li>
+      <li class=""><a href="#lE" data-toggle="tab">Sljedeći koraci</a></li>
     </ul>
     <div class="tab-content">
       <div class="tab-pane" id="lA">
-        <p>Howdy, Im in Section B.</p>
+        <p>{{{description}}}</p>
       </div>
       <div class="tab-pane" id="lB">
-        <p>Howdy, Im in Section B.</p>
+        <p>{{{relevancy}}}</p>
       </div>
       <div class="tab-pane" id="lC">
-        <p>Howdy, Im in Section B.</p>
+        <p>{{{expectedresults}}}</p>
       </div>
       <div class="tab-pane" id="lD">
-        <p>Howdy, Im in Section B.</p>
+        <p>{{{results}}}</p>
+      </div>
+      <div class="tab-pane" id="lE">
+        <p>{{{nextsteps}}}</p>
       </div>
     </div>
   </div>
