@@ -96,11 +96,14 @@
   {{^dataurl}}
   <strong>Potrebno je pronaći!</strong>
   {{/dataurl}}
-  {{#typeofdata}}&ndash; <a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više info</a>{{/typeofdata}}
 </p>
 <div class="progress">
   <div class="bar bar-{{status}}" style="width: {{progress}}%;" title="progress so far"></div>
 </div>
+
+<p>
+{{#typeofdata}}<a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više info</a> &ndash; <a href="#" class="js-more-info-report" title="Click to show (hide) report"><i class="icon-info-sign"></i> Izvješće za prvu godinu provedbe akcijskog plana</a>{{/typeofdata}}
+</p>
 
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
@@ -135,7 +138,7 @@
     {{{goals}}}
   </dd>
 </dl>
-<a href="#" class="js-more-info-report" title="Click to show (hide) report"><i class="icon-info-sign"></i> Izvješće za prvu godinu provedbe akcijskog plana</a>
+
 <dl class="dl-horizontal more-info-report" style="display: none;">
   <dt>
     Pokazatelji
