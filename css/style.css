@@ -1,3 +1,16 @@
+.subactivity {
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 25px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.subactivity h3 {
+  margin: 0;
+  font-style: italic;
+  font-size: 50%;
+}
+
 .record {
   border-bottom: solid 1px #ccc;
   padding-bottom: 25px;
