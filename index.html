@@ -36,36 +36,23 @@
     </h1>
   </div>
   <div class="row">
-    <div class="span6">
-      <center>
-      <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js">
-{"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AnT6FneGyN6DdHBEQno3dEE2NjhMRUdGclZXZVMtbWc&transpose=0&headers=0&range=A1%3AB4&gid=3&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#000","fontSize":16},"legendTextStyle":{"color":"#222","fontSize":"14"},"animation":{"duration":500},"theme":"maximized","width":600,"slices":{"0":{"color":"#ff9900"},"1":{"color":"#666666"},"2":{"color":"#dc3912"}},"is3D":true,"hAxis":{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},"vAxes":[{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"minValue":null,"viewWindow":{"min":null,"max":null},"maxValue":null}],"pieHole":0,"title":"Status akcijskog plana","booleanRole":"certainty","height":371,"legend":"right","focusTarget":"series","tooltip":{},"pieSliceTextStyle":{"fontSize":"14"}},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"PieChart","chartName":"Chart 1"}
-      </script>
-      </center>
-    </div>
-    <div class="span6">
-      <center>
-      <script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js">
-{"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AnT6FneGyN6DdHBEQno3dEE2NjhMRUdGclZXZVMtbWc&transpose=0&headers=1&range=A46%3AC62&gid=3&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#000","fontSize":16},"series":{"0":{"errorBars":{"errorType":"none"}}},"legendTextStyle":{"bold":true,"color":"#222","fontSize":12},"animation":{"duration":500},"theme":"maximized","width":600,"hAxis":{"useFormatFromData":true,"title":"Postotak provedbe","minValue":null,"viewWindowMode":null,"textStyle":{"bold":false,"color":"none","fontSize":"1"},"viewWindow":null,"maxValue":null},"vAxes":[{"useFormatFromData":true,"title":null,"minValue":null,"logScale":false,"viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"minValue":null,"logScale":false,"viewWindow":{"min":null,"max":null},"maxValue":null}],"booleanRole":"certainty","title":"Mjere akcijskog plana","height":371,"domainAxis":{"direction":1},"legend":"in","isStacked":true,"tooltip":{}},"state":{},"view":{},"isDefaultVisualization":false,"chartType":"ColumnChart","chartName":"Chart 2"}
-      </script>
-      </center>
-    </div>
-  </div>
-  <br>
-  <br>
-<!--  <div class="row">
     <div class="span8">
       <div class="load-status"></div>
-    </div> -->
-    <div class="row">
-      <div class="span6">
-        <center>
-        <p><a href="akcijski-plan.html" class="btn btn-large btn-success">Pogledajte sve aktivnosti &raquo;</a></p></center>
-      </div>
-      <div class="span6">
-        <center>
-        <p><a href="tijela-javne-vlasti.html" class="btn btn-large btn-default">Uloga tijela javne vlasti &raquo;</a></p></center>
-      </div>
+    </div>
+    <div class="span4">
+        <p><a href="index.html" class="btn btn-large btn-success">Povratak &raquo;</a></p>
+        <h3>Legenda statusa prikazanih na traci:</h3>
+        <p><span class="label label-info">Ukupno za mjeru</span></p>
+        <p><span class="label label-inverse">Nije započeto</span></p>
+        <p><span class="label label-warning">U tijeku</span></p>
+        <p><span class="label label-important">Kasni</span></p>
+        <p><span class="label label-success">Provedeno</span></p>
+        <h3>Nositelji su ocjenili provedbu jednom od ove četiri ocjene:</h3>
+        <p><span class="label label-info">Provedba nije započela</span></p>
+        <p><span class="label label-warning">Provedeno u manjoj mjeri</span></p>
+        <p><span class="label label-warning">Provedeno u znatnoj mjeri</span></p>
+        <p><span class="label label-success">Provedeno u potpunosti</span></p>
+    </div>
   </div>
 
   <div class="footer">
@@ -91,32 +78,47 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/mustache" id="our-template">
 {{#records}}
-<div class="record">
+<div class="{{divclass}}">
   <h3>
     {{title}}
   </h3>
 
   <div class="owners">
-    {{#owners}}Nositelj {{name}}{{/owners}}
+    {{#owners}}Nositelj {{name}} {{#responsible1name}}(<a href="mailto:{{responsible1email}}"><i class="icon-envelope"></i></a> {{responsible1name}}{{#responsible2name}} <a href="mailto:{{responsible2email}}"><i class="icon-envelope"></i></a> {{responsible2name}}{{/responsible2name}} 
+    {{^responsible2name}}{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}{{/responsible3name}} 
+    {{^responsible3name}}{{/responsible3name}}){{/responsible1name}} 
+    {{^responsible1name}}{{/responsible1name}}{{/owners}}
 
     {{^owners}}
-    <a href="" class="btn btn-large btn-primary take-it-on" data-toggle="modal" data-target="#take-it-on-modal">Nema nositelja &ndash; preuzmi ti &raquo;</a>
+    &nbsp;<!-- Nema nositelja -->
     {{/owners}}
+    {{#coowners}}<br>Sunositelj {{coowners}}{{/coowners}}
+
+    {{^coowners}}
+    &nbsp;<!-- Nema sunositelja -->
+    {{/coowners}}
   </div>
 
 <p class="data-source">
-  {{dataformat}}{{^dataformat}}Nepoznato{{/dataformat}}:
+  {{dataformat}}{{^dataformat}}&nbsp;<!-- Nema vrste -->{{/dataformat}}:&nbsp;
   {{#dataurl}}
   {{dataurl}}
   {{/dataurl}}
   {{^dataurl}}
-  <strong>Potrebno je pronaći!</strong>
+  &nbsp;<!-- Nema kategorije iznad -->
   {{/dataurl}}
-  &ndash; <a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više info</a>
 </p>
 <div class="progress">
   <div class="bar bar-{{status}}" style="width: {{progress}}%;" title="progress so far"></div>
 </div>
+
+<p>
+{{#typeofdata}}<a href="#" class="js-more-info" title="Click to show (hide) more info"><i class="icon-info-sign"></i> Više informacija</a> &ndash; <a href="#" class="js-more-info-report" title="Click to show (hide) report"><i class="icon-info-sign"></i> Izvješće za prvu godinu provedbe akcijskog plana</a>{{/typeofdata}}
+{{^typeofdata}}
+{{^type}}<a href="http://goo.gl/n7Y2Fg" target="_blank" class="link-more-info-action-plan" title="Click to open action plan"><i class="icon-info-sign"></i> Akcijski plan za provedbu inicijative POV u Republici Hrvatskoj za razdoblje od 2014. do 2016. godine (PDF)</a>
+{{/type}}
+{{/typeofdata}}
+</p>
 
 <dl class="dl-horizontal more-info" style="display: none;">
   <dt>
@@ -127,11 +129,10 @@
     {{^dataurl}}&nbsp;{{/dataurl}}
   </dd>
   <dt>
-    Pokazatelji
+    Rok
   </dt>
   <dd>
-  {{place}}{{#period}} &ndash; {{period}}{{/period}}.
-  {{{description}}}
+    {{#period}}{{period}}{{/period}} <span class="label label-{{statuslabel}}">{{statusopis}}</span>
   </dd>
   <dt>
     Sredstva
@@ -140,16 +141,55 @@
     {{workneeded}}
   </dd>
   <dt>
-    Status
+    Samoocjena
   </dt>
   <dd>
-    <span class="label label-{{statuslabel}}">{{statusopis}}</span>
+    {{#currentprogress}}Do srpnja 2015. &ndash; {{currentprogress}}{{/currentprogress}}
   </dd>
   <dt>
-    Bilješke
+    Glavni cilj
   </dt>
   <dd>
-    {{{notes}}}
+    {{{goals}}}
+  </dd>
+</dl>
+
+<dl class="dl-horizontal more-info-report" style="display: none;">
+  <dt>
+    Pokazatelji
+  </dt>
+  <dd>
+    {{{description}}}
+  </dd>
+  <dt>
+    Relevantnost
+  </dt>
+  <dd>
+    {{{relevancy}}}
+  </dd>
+  <dt>
+    Očekivani rezultati
+  </dt>
+  <dd>
+    {{{expectedresult}}}
+  </dd>
+  <dt>
+    Opis rezultata
+  </dt>
+  <dd>
+    {{{results}}}
+  </dd>
+  <dt>
+    Sljedeći koraci
+  </dt>
+  <dd>
+    {{{nextsteps}}}
+  </dd>
+  <dt>
+    Datoteka
+  </dt>
+  <dd>
+    <a href="https://udruge.gov.hr/UserDocsImages//dokumenti//Izvje%C5%A1%C4%87e_o_provedbi_Akcijskog_plana_POV-2014.pdf" target="_blank">Izvješće_o_provedbi_Akcijskog_plana_POV-2014.pdf</a>
   </dd>
 </dl>
 </div>
