@@ -1,7 +1,9 @@
 .subactivity {
   border-bottom: solid 1px #ccc;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
   padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-left: 50px;
   margin-bottom: 10px;
   background-color: #ffffcc;
