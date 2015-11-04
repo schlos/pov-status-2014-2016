@@ -1,0 +1,50 @@
+.subactivity {
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  background-color: #ffffcc;
+}
+
+.subactivity h3 {
+  margin: 0;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.record {
+  border-bottom: solid 1px #ccc;
+  padding-bottom: 25px;
+  margin-bottom: 10px;
+}
+
+.record h3 {
+  margin: 0;
+}
+
+.owners {
+  margin: 5px 0;
+}
+
+.take-it-on {
+  margin-top: -5px;
+}
+
+.data-source {
+  font-style: italic;
+}
+
+.footer {
+  border-top: solid 1px #ccc;
+  margin-top: 50px;
+  padding: 20px 0;
+}
+
+.gravatar {
+  margin-right: 10px;
+  display: inline;
+}
