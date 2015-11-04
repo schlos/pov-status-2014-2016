@@ -40,7 +40,7 @@
       <div class="load-status"></div>
     </div>
     <div class="span4">
-        <p><a href="index.html" class="btn btn-large btn-success">Povratak &raquo;</a></p>
+        <p><a href="https://vlada.gov.hr/otvorena-vlada/205" class="btn btn-large btn-success">Povratak na gov.hr &raquo;</a></p>
         <h3>Legenda statusa prikazanih na traci:</h3>
         <p><span class="label label-info">Ukupno za mjeru</span></p>
         <p><span class="label label-inverse">Nije započeto</span></p>
@@ -88,7 +88,6 @@
     {{^responsible2name}}{{/responsible2name}}{{#responsible3name}} <a href="mailto:{{responsible3email}}"><i class="icon-envelope"></i></a> {{responsible3name}}{{/responsible3name}} 
     {{^responsible3name}}{{/responsible3name}}){{/responsible1name}} 
     {{^responsible1name}}{{/responsible1name}}{{/owners}}
-
     {{^owners}}
     &nbsp;<!-- Nema nositelja -->
     {{/owners}}
@@ -100,9 +99,9 @@
   </div>
 
 <p class="data-source">
-  {{dataformat}}{{^dataformat}}&nbsp;<!-- Nema vrste -->{{/dataformat}}:&nbsp;
+  {{dataformat}}{{^dataformat}}&nbsp;<!-- Nema vrste -->{{/dataformat}}
   {{#dataurl}}
-  {{dataurl}}
+  :&nbsp;{{dataurl}}
   {{/dataurl}}
   {{^dataurl}}
   &nbsp;<!-- Nema kategorije iznad -->
